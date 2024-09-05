@@ -34,7 +34,6 @@ class MyOpen:
         print('FECHANDO ARQUIVO')
         self._arquivo.close()
 
-
 with MyOpen('aula149.txt', 'w') as arquivo:
     arquivo.write("Linha 1\n")
     arquivo.write("Linha 2\n")
