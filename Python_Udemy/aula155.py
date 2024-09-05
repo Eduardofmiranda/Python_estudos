@@ -26,10 +26,44 @@
 # object acima
 # class Foo:
 #     ...
+from typing import Any
 
 
-Foo = type('Foo', (object,), {})
-f = Foo()
-# print(isinstance(f, Foo))
-print(type(f))
-print(type(Foo))
+def meu_repr(self):
+    return f'{type(self).__name__}({self.__dict__})'
+
+
+
+class Meta(type):
+    def __new__(mcs, name, bases, dct):
+        print('METACLASS NEW')
+        cls = super().__new__(mcs, name, bases, dct)
+        cls.attr = 1234
+        cls.__repr__ = meu_repr
+        
+        if 'falar' not in cls.__dict__ or not callable(cls.__dict__['falar']):
+            raise NotImplemented('Implemente falar')
+
+        return cls
+    
+    def __call__(self, *args, **kwds):
+        instancia = super().__call__(*args, **kwds)
+        if 'nome' not in instancia.__dict__:
+            raise NotImplemented('Crie o atributo nome')
+        return instancia
+
+class Pessoa(metaclass=Meta):
+    def __new__(cls, *args, **kwargs):
+        print('MEU NEW') 
+        instancia = super().__new__(cls)
+        return instancia
+    
+    def __init__(self, nome):
+        print('MEU INIT')
+        self.nome = nome
+    
+    def falar(self):
+        print('Falando')
+
+p1 = Pessoa('Eduardo')
+p1.falar()
