@@ -1,3 +1,4 @@
+# type: ignore
 # Try, except, else e finally
 #a = 18
 #b = 0

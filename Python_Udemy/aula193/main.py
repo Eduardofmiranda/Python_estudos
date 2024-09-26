@@ -1,11 +1,18 @@
+# type: ignore
 # Selenium - Automatizando tarefas no navegador
 from pathlib import Path
 from time import sleep
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 # Chrome Options
 # https://peter.sh/experiments/chromium-command-line-switches/
-# Caminho para a raiz do projeto
+# Doc Selenium
+# https://selenium-python.readthedocs.io/locating-elements.html
 
 ROOT_FOLDER = Path(__file__).parent
 
@@ -28,11 +35,28 @@ def make_chrome_browser(*options: str) -> webdriver.Chrome:
     return browser
 
 if __name__ == '__main__':
+    TIME_TO_WAIT = 10
     # Example
     # options = '--headless', '--disable-gpu',
     options = ()
     browser = make_chrome_browser(*options)
-    # Como antes
-    browser.get('https://www.google.com')
+    try: 
+        # Como antes
+        browser.get('https://www.google.com')
+        
+        # Espere para encontrar o input
+        search_input = WebDriverWait(browser, TIME_TO_WAIT).until(
+            EC.presence_of_element_located(
+                (By.NAME, 'q')
+                )      
+        )       
+        search_input.send_keys('Hello World!')
+    
+    except(TypeError):
+        print('Erro de tipagem')
+    
+    
     # Dorme por 10 segundos
-    sleep(2)
+    sleep(TIME_TO_WAIT)
+    
+    
