@@ -100,7 +100,160 @@ def create_door_mat(n, m):
     for line in reversed(pattern):
         print(line)
         
+def print_rangoli(tamanho):
+    tamanho = [('-' )]
     
-if __name__ == '__main__': 
-    n, m = int(input().split())
-    create_door_mat(n, m)
+    
+    
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import product
+from collections import Counter
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+def product(A, B):
+    result = list(product(A, B))
+    
+    print(*result)
+    
+
+
+    
+    
+if __name__ == '__main__':
+    # num_shoes = int(input())
+    # shoe_sizes = list(map(int,input().split()))
+    # num_customers = int(input())
+    
+    # inventory = Counter(shoe_sizes)
+    
+    # print(inventory)
+    # total_money_earned = 0
+    
+    # for _ in range(num_customers):
+    #     size, price = map(int,input().split())
+        
+    #     if inventory[size] > 0:
+    #         total_money_earned += price
+    #         inventory -= 1 
+            
+    
+    # print(total_money_earned)
+    
+    # from collections import defaultdict
+    # d = defaultdict(list)
+    # d['python'].append("awesome")
+    # d['something-else'].append("not relevant")
+    # d['python'].append("language")
+    # for i in d.items():
+    #     print(i)
+    
+    # from collections import namedtuple
+
+    # qtd_alunos = int(input())
+    # columns = input().split()
+
+    # Student = namedtuple('Student', columns)
+
+    # total_marks = sum(int(Student(*input().split()).MARKS) for _ in range(qtd_alunos))
+
+    # print(Student)
+
+# from collections import OrderedDict
+
+# ordinary_dictionary = OrderedDict()
+# # ordinary_dictionary['a'] = 1
+# # ordinary_dictionary['b'] = 2
+# # ordinary_dictionary['c'] = 3
+# # ordinary_dictionary['d'] = 4
+# # ordinary_dictionary['e'] = 5
+
+# # print(ordinary_dictionary)
+
+# qtd_produtos = int(input())
+
+# for _ in range(qtd_produtos):
+#     entrada = input().rsplit(maxsplit=1)
+#     name = entrada[0]
+#     price = int(entrada[1])    
+    
+#     if name in ordinary_dictionary:
+#         ordinary_dictionary[name] += price
+#     else:
+#         ordinary_dictionary[name] = price
+    
+# for name, price in ordinary_dictionary.items():
+#     print(f'{name} {price}')
+
+
+# from collections import OrderedDict
+
+# ordinary_dictionary = OrderedDict()
+
+# qtd_entradas = int(input())
+
+# for _ in range(qtd_entradas):
+#     word = input().strip()
+    
+#     if word in ordinary_dictionary:
+#         ordinary_dictionary[word] += 1
+#     else:
+#         ordinary_dictionary[word] = 1
+        
+# print(len(ordinary_dictionary))
+
+# print(' '.join(map(str, ordinary_dictionary.values())))
+
+# from collections import OrderedDict
+
+# ordinary_dictionary = OrderedDict()
+
+# qtd_entradas = int(input())
+
+# for _ in range(qtd_entradas):
+#     word = input().strip()
+    
+#     if word in ordinary_dictionary:
+#         ordinary_dictionary[word] += 1
+#     else:
+#         ordinary_dictionary[word] = 1
+        
+# print(len(ordinary_dictionary))
+
+# print(' '.join(map(str, ordinary_dictionary.values())))
+
+# dicionario = {'joao':25,
+#               'maria': 30,
+#               'Pedro': 22}
+# nome = input("Digite um nome: ")
+
+# if nome in dicionario:
+#     print(f'a idade de {nome} é {dicionario[nome]} anos.')
+# else:
+#     print('nome não encontrado')
+
+
+# from collections import Counter
+
+# if __name__ == '__main__':
+#     s = input()
+    
+#     counter = Counter(s)
+    
+#     sorted_characters = sorted(counter.items(), key=lambda x:(-x[1], x[0]))
+    
+#     for char, freq in sorted_characters[:3]:
+#         print(char, freq)
+
+
+# from itertools import permutations
+
+# string = list('HACK')
+# permuta = list(permutations(string, 2))
+
+# for p in sorted(permuta):
+#     print(''.join(p))
+
+
+            
